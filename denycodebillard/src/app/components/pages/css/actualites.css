@@ -1,0 +1,23 @@
+#actualites{
+    padding: 10px;
+}
+
+#actualites table{
+    margin: 40px auto 40px auto;
+    border-spacing: 0px;
+}	
+
+#actualites td,
+#actualites th {
+    border: 2px solid rgb(244,237,222);
+    padding: 10px;
+}
+
+#actualites td {
+    text-align: center;
+}
+
+#actualites th[scope='col'] {
+    background-color: rgba(105, 105, 105, 0.5);
+    color: #fff;
+}
