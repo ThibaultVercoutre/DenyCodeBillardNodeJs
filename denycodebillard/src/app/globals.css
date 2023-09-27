@@ -40,3 +40,36 @@ nav ul{
 nav ul button{
   margin: 5px;
 }
+
+.nav-link {
+  display: inline-block;
+  font-size: 1.2rem;
+  /* font-family: 'Arial', sans-serif; */
+  color: rgb(244,237,222);
+  border: 2px solid rgb(244,237,222);
+  box-shadow: 5px 5px 10px rgba(103, 102, 102, 0.5);
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover, .accueil:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #000000;
+  cursor: pointer;
+}
+
+.accueil {
+  backdrop-filter: blur(10px);
+  display: inline-block;
+  font-size: 1.2rem;
+  /* font-family: 'Arial', sans-serif; */
+  color: rgb(244,237,222);
+  border: 2px solid rgb(244,237,222);
+  box-shadow: 5px 5px 10px rgba(103, 102, 102, 0.5);
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
