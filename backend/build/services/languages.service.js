@@ -73,3 +73,53 @@ export const getLanguageByName = (language) => __awaiter(void 0, void 0, void 0,
         throw error;
     }
 });
+export const getNotionsByLanguageName = (language) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const db = yield connexion();
+        yield connect(db);
+        const rows = yield new Promise((resolve, reject) => {
+            const sql = "SELECT * FROM `notions` WHERE id IN ( SELECT notion FROM exercices WHERE language IN ( SELECT id FROM languages WHERE name = ?))";
+            db.query(sql, [language], (err, rows, field) => {
+                if (err) {
+                    reject(err);
+                }
+                else {
+                    resolve(rows);
+                }
+            });
+        });
+        db.end();
+        const languages = rows.map((language) => {
+            return new Language(language);
+        });
+        return languages;
+    }
+    catch (error) {
+        throw error;
+    }
+});
+export const getExercicesByNotionNameByLanguageName = (language, notion) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const db = yield connexion();
+        yield connect(db);
+        const rows = yield new Promise((resolve, reject) => {
+            const sql = "SELECT * FROM `exercices` WHERE language IN ( SELECT id FROM languages WHERE name = ? ) AND notion IN ( SELECT id FROM notions WHERE name = ? )";
+            db.query(sql, [language, notion], (err, rows, field) => {
+                if (err) {
+                    reject(err);
+                }
+                else {
+                    resolve(rows);
+                }
+            });
+        });
+        db.end();
+        const languages = rows.map((language) => {
+            return new Language(language);
+        });
+        return languages;
+    }
+    catch (error) {
+        throw error;
+    }
+});

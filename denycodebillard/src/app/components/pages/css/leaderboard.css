@@ -1,0 +1,83 @@
+.leaderboard-container{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.leaderboard-container div{
+    font-size: 1.2rem;
+    border: 2px solid rgb(244, 237, 222);
+    padding: 0.5rem;
+}
+
+.leaderboard-rank{
+    flex: 1;
+    text-align: right;
+}
+
+.leaderboard-pseudo{
+    flex: 6;
+}
+
+.leaderboard-lvl{
+    flex: 1;
+    text-align: right;
+}
+
+.leaderboard-xp{
+    flex: 1;
+    text-align: right;
+}
+
+.podium {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.podium .leaderboard-rank{
+    flex: 1;
+    text-align: center;
+}
+
+.podium .leaderboard-pseudo{
+    flex: 6;
+    text-align: center;
+}
+
+.podium .leaderboard-lvl{
+    flex: 1;
+    text-align: center;
+}
+
+.podium .leaderboard-xp{
+    flex: 1;
+    text-align: center;
+}
+
+.or{
+    background-image: url(images/Medaille_Or.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.argent{
+    background-image: url(images/Medaille_Argent.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.bronze{
+    background-image: url(images/Medaille_Bronze.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.carre_lead {
+    padding: 15px;
+    height: 104px;
+}

@@ -21,7 +21,6 @@ export const LanguageToNotionToExercice = ({ nameLanguageToNotion, nameLanguageT
             const exercices = await fetchLanguages();
             setexercices(exercices);
           }
-          console.log(exercices);
         })();
       }, [varLanguageToNotion]);
 

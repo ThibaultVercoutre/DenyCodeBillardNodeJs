@@ -1,0 +1,59 @@
+#contenu_profil{
+    display: flex;
+    justify-content: space-around;
+}
+
+.section_profil{
+    flex: 1;
+    margin: 5px;
+}
+
+.view_add_friends, .view_friends{
+    flex-direction: column;
+    height: 50%;
+}
+
+.profile-container, .profile-change, #search_friend, .view_add_friends, .view_friends {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    max-width: 600px;
+    margin: 15px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 10px rgba(103, 102, 102, 0.5);
+}
+
+.profile-container {
+    flex-direction: column;
+}
+
+#listes_demande, #listes_amis {
+    border: 0px solid black;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 4px rgba(255, 255, 255, 0);
+    overflow-y: auto;
+    width: 100%;
+}
+
+.profile-info {
+    text-align: center;
+    width: 100%;
+}
+
+.xp-bar-container {
+    width: 100%;
+    height: 5px;
+    background-color: #eee;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.xp-bar {
+    height: 100%;
+    background-color: #4caf50;
+}

@@ -24,7 +24,6 @@ export const Languages = () => {
         (async () => {
           const languages = await fetchLanguages();
           setLanguages(languages);
-          console.log(languages)
         })();
       }, []);
 

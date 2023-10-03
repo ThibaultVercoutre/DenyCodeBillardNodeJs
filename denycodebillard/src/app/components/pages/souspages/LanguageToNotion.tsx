@@ -25,11 +25,8 @@ export const LanguageToNotion = ({ nLanguage, nameLanguageToNotion, varLanguageT
           const notions = await fetchLanguageToNotions();
           setNotions(notions);
         }
-        //console.log(notions)
       })();
     }, [nLanguage]);
-
-    console.log(nameLanguageToNotion, `http://localhost:5000/language/${nameLanguageToNotion}/notions`);
 
     const fetchLanguageToNotions = async () => {
         return (await axios.get(`http://localhost:5000/language/${nameLanguageToNotion}/notions`)).data;

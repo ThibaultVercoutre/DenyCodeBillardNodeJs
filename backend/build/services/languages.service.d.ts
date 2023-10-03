@@ -30,3 +30,9 @@ export declare const getLanguages: () => Promise<(import("mongoose").Document<un
 export declare const getLanguageByName: (language: string) => Promise<(import("mongoose").Document<unknown, {}, ILanguage> & ILanguage & {
     _id: import("mongoose").Types.ObjectId;
 })[]>;
+export declare const getNotionsByLanguageName: (language: string) => Promise<(import("mongoose").Document<unknown, {}, ILanguage> & ILanguage & {
+    _id: import("mongoose").Types.ObjectId;
+})[]>;
+export declare const getExercicesByNotionNameByLanguageName: (language: string, notion: string) => Promise<(import("mongoose").Document<unknown, {}, ILanguage> & ILanguage & {
+    _id: import("mongoose").Types.ObjectId;
+})[]>;

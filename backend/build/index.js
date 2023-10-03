@@ -12,6 +12,9 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import cors from "cors";
 import { languagesRouter } from "./routes/languages.route.js";
+import { notionsRouter } from "./routes/notions.route.js";
+import { usersRouter } from "./routes/users.route.js";
+import { languageStatsRouter } from "./routes/stats.route.js";
 dotenv.config();
 //EQr4B7b8fLTddXZC
 // connexion();
@@ -46,6 +49,9 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
 app.use("/", languagesRouter);
+app.use("/", notionsRouter);
+app.use("/", usersRouter);
+app.use("/", languageStatsRouter);
 app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.send("Hello World!");
     // const languages = await getLanguages();

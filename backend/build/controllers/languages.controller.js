@@ -16,3 +16,11 @@ export const getLanguageByName = (req, res) => __awaiter(void 0, void 0, void 0,
     const languages = yield LanguagesService.getLanguageByName(req.params.name);
     return res.status(200).json(languages);
 });
+export const getNotionsByLanguageName = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const languages = yield LanguagesService.getNotionsByLanguageName(req.params.name);
+    return res.status(200).json(languages);
+});
+export const getExercicesByNotionNameByLanguageName = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const languages = yield LanguagesService.getExercicesByNotionNameByLanguageName(req.params.nameL, req.params.nameN);
+    return res.status(200).json(languages);
+});

@@ -7,6 +7,9 @@ import dotenv from "dotenv";
 import cors from "cors";
 
 import { languagesRouter } from "./routes/languages.route.js";
+import { notionsRouter } from "./routes/notions.route.js";
+import { usersRouter } from "./routes/users.route.js";
+import { languageStatsRouter } from "./routes/stats.route.js";
 
 dotenv.config();
 
@@ -55,6 +58,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use("/", languagesRouter);
+app.use("/", notionsRouter);
+app.use("/", usersRouter);
+app.use("/", languageStatsRouter);
 
 app.get("/", async (req, res) => {
   res.send("Hello World!");
