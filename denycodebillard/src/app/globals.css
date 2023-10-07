@@ -24,13 +24,42 @@ body {
 }
 
 .Accueil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-around; */
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    /* background-image: url(chemin_vers_votre_image_generÃ©e.jpg); */
+    /* background-size: cover; */
+    background-position: center;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(-45deg, #e7bc2f, #e86209, #52df57, #19aa0b, #1891bd, #2920e0);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    box-shadow: inset 0px 0px 50px black;
+}
+
+.content-section {
+  min-height: 100vh;
+  background: linear-gradient(225deg, #e7bc2f, #e86209, #52df57, #19aa0b, #1891bd, #2920e0);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  box-shadow: inset 0px 0px 50px black;
+}
+
+.languages-container,
+.notions-container,
+.exercises-container  {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* justify-content: space-around; */
-  height: 100vh;
-  position: relative;
-  z-index: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4vw;
+  padding: 30px;
 }
 
 .header{
@@ -208,4 +237,16 @@ form input, div.log input{
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
 }

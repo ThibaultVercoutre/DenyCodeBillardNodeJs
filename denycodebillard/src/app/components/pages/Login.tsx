@@ -24,7 +24,6 @@ export const Login = ({ user, setUser }: LoginProps) => {
 
       const dataUser = await fetchUser();
       setUser(dataUser);
-      console.log("Hello", dataUser);
     };
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

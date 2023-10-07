@@ -34,9 +34,9 @@ export const LanguageToNotionToExercice = ({ nameLanguageToNotion, nameLanguageT
     if(varLanguageToNotion != 0){
       for (let i = 0; i < exercices.length; i++) {
           divElements.push(
-            <div className="exercice box" data-language={nameLanguageToNotion} key={i}>
-              <span>{exercices[i].name}</span>
-            </div>
+              <div className="exercice box" data-language={nameLanguageToNotion} key={i}>
+                  <span>{exercices[i].name}</span>
+              </div>
           );
         }
     }else{

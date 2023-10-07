@@ -3,6 +3,11 @@
     justify-content: space-around;
 }
 
+.logout{
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+}
+
 .section_profil{
     flex: 1;
     margin: 5px;

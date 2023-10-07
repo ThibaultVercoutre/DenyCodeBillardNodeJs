@@ -6,6 +6,7 @@ import axios from 'axios';
 import { Signin } from "./pages/Signin";
 import { Login } from "./pages/Login";
 import { UserButton } from "./pages/UserButton";
+import { Titre } from "./Titre";
 
 import { User as UserType } from "./types/User";
 
@@ -25,30 +26,36 @@ export const Accueil = ({ npage, setVarPage }: AccueilProps) => {
       // Load user from localStorage on component mount
       if (typeof window !== 'undefined' && window.localStorage) {
         const storedUser = localStorage.getItem("user");
+        // const storedUser2 = storedUser ? JSON.parse(storedUser) : null;
         return storedUser ? JSON.parse(storedUser) : null;
       }
       return null;
     });
 
+    const fetchUser = async () => {
+        return (await axios.get(`http://localhost:5000/userbyemail/${user?.email}`)).data;
+    };
+
     useEffect(() => {
       // Save user to localStorage whenever it changes
-      if (true) {
-        // localStorage.setItem("user", JSON.stringify(user));
+      if (user) {
+        localStorage.setItem("user", JSON.stringify(user));
         setConnected(!connected);
         setShowLogin(false);
         setShowSign(false);
         setConnect("Inscription");
-        console.log(user);
+        // console.log(user);
       }
     }, [user]);
 
     useEffect(() => {
       (async () => {
-        if(user){
-          setConnected(!connected);
+        if (user) {
+          // const user2 = await fetchUser();
+          // setUser(user2);
         }
       })();
-    }, [user]);
+    }, []);
 
     const changeButton = () => {
       switch (connect) {
@@ -84,7 +91,7 @@ export const Accueil = ({ npage, setVarPage }: AccueilProps) => {
           </div>
           <div className="header">
             <header>
-              <h1>DenyCodeBillard</h1>
+              <Titre />
             </header>
             <nav>
               <ul>
