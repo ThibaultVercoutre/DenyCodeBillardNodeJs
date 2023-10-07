@@ -9,9 +9,11 @@ interface AccueilProps {
     nameNotionToLanguage: string;
     nameNotionToLanguageToExercice: string;
     setVarNotionToLanguage: (npage: number) => void;
+    exercice: number;
+    setExercice: (exercice: number) => void;
   }
 
-export const NotionToLanguageToExercice = ({ nameNotionToLanguage, nameNotionToLanguageToExercice, varNotionToLanguage, setVarNotionToLanguage }: AccueilProps) => {
+export const NotionToLanguageToExercice = ({ exercice, setExercice, nameNotionToLanguage, nameNotionToLanguageToExercice, varNotionToLanguage, setVarNotionToLanguage }: AccueilProps) => {
     
     const [exercices, setexercices] = useState<ExerciceType[]>([]);
 
@@ -34,7 +36,7 @@ export const NotionToLanguageToExercice = ({ nameNotionToLanguage, nameNotionToL
     if(varNotionToLanguage != 0){
       for (let i = 0; i < exercices.length; i++) {
           divElements.push(
-            <div className="exercice box" data-language={nameNotionToLanguage} key={i}>
+            <div className="exercice box" data-language={nameNotionToLanguage} onClick={() => setExercice(exercices[i].id)} key={i}>
               <span>{exercices[i].name}</span>
             </div>
           );

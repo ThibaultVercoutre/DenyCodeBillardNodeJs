@@ -9,9 +9,11 @@ interface AccueilProps {
     nameLanguageToNotion: string;
     nameLanguageToNotionToExercice: string;
     setVarLanguageToNotion: (npage: number) => void;
+    exercice: number;
+    setExercice: (exercice: number) => void;
   }
 
-export const LanguageToNotionToExercice = ({ nameLanguageToNotion, nameLanguageToNotionToExercice, varLanguageToNotion, setVarLanguageToNotion }: AccueilProps) => {
+export const LanguageToNotionToExercice = ({ exercice, setExercice, nameLanguageToNotion, nameLanguageToNotionToExercice, varLanguageToNotion, setVarLanguageToNotion }: AccueilProps) => {
 
     const [exercices, setexercices] = useState<ExerciceType[]>([]);
 

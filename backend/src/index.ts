@@ -10,6 +10,7 @@ import { languagesRouter } from "./routes/languages.route.js";
 import { notionsRouter } from "./routes/notions.route.js";
 import { usersRouter } from "./routes/users.route.js";
 import { languageStatsRouter } from "./routes/stats.route.js";
+import { exercicesRouter } from "./routes/exercices.route.js";
 
 dotenv.config();
 
@@ -61,6 +62,7 @@ app.use("/", languagesRouter);
 app.use("/", notionsRouter);
 app.use("/", usersRouter);
 app.use("/", languageStatsRouter);
+app.use("/", exercicesRouter);
 
 app.get("/", async (req, res) => {
   res.send("Hello World!");

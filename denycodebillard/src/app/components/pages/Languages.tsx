@@ -7,7 +7,12 @@ import { LanguageToNotionToExercice } from "./souspages/LanguageToNotionToExerci
 import { Arbo } from "./souspages/ArboLanguages";
 import { Language as LanguageType } from "../types/Language";
 
-export const Languages = () => {
+interface LanguageProps {
+    exercice: number;
+    setExercice: (exercice: number) => void;
+}
+
+export const Languages = ({ exercice, setExercice }: LanguageProps) => {
 
     const [varLanguage, setVarLanguage] = useState(0);
     const [varLanguageToNotion, setVarLanguageToNotion] = useState(0);
@@ -46,7 +51,7 @@ export const Languages = () => {
 
     if(varLanguageToNotion == 0){
         divElementsLanguagesToNotion.push(
-            <LanguageToNotion nameLanguageToNotion = {nameLanguageToNotion} nameLanguageToNotionToExercice = {nameLanguageToNotionToExercice} setNameLanguageToNotionToExercice = {setNameLanguageToNotionToExercice} nLanguage = {varLanguage} varLanguageToNotion = {varLanguageToNotion} setVarLanguageToNotion = {setVarLanguageToNotion}/>
+            <LanguageToNotion exercice={exercice} setExercice={setExercice} nameLanguageToNotion = {nameLanguageToNotion} nameLanguageToNotionToExercice = {nameLanguageToNotionToExercice} setNameLanguageToNotionToExercice = {setNameLanguageToNotionToExercice} nLanguage = {varLanguage} varLanguageToNotion = {varLanguageToNotion} setVarLanguageToNotion = {setVarLanguageToNotion}/>
         )
     }
 
@@ -56,7 +61,7 @@ export const Languages = () => {
             <Arbo setVarLanguageToNotion = {setVarLanguageToNotion} setVarLanguage = {setVarLanguage} nbLanguage = {varLanguage} nameLanguageToNotion = {nameLanguageToNotion} varLanguageToNotion = {varLanguageToNotion} nameLanguageToNotionToExercice = {nameLanguageToNotionToExercice}/>
             {divElementsLanguages}
             {divElementsLanguagesToNotion}
-            <LanguageToNotionToExercice varLanguageToNotion = {varLanguageToNotion} setVarLanguageToNotion = {setVarLanguageToNotion} nameLanguageToNotion = {nameLanguageToNotion} nameLanguageToNotionToExercice = {nameLanguageToNotionToExercice} />
+            <LanguageToNotionToExercice exercice={exercice} setExercice={setExercice} varLanguageToNotion = {varLanguageToNotion} setVarLanguageToNotion = {setVarLanguageToNotion} nameLanguageToNotion = {nameLanguageToNotion} nameLanguageToNotionToExercice = {nameLanguageToNotionToExercice} />
         </section>
     );
 };

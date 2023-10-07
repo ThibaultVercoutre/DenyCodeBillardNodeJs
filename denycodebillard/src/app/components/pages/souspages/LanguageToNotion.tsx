@@ -11,6 +11,8 @@ interface AccueilProps {
     nameLanguageToNotionToExercice: string;
     setNameLanguageToNotionToExercice: (nameLanguageToNotionToExercice: string) => void;
     setVarLanguageToNotion: (npage: number) => void;
+    exercice: number;
+    setExercice: (exercice: number) => void;
   }
 
 export const LanguageToNotion = ({ nLanguage, nameLanguageToNotion, varLanguageToNotion, setVarLanguageToNotion, setNameLanguageToNotionToExercice}: AccueilProps) => {
