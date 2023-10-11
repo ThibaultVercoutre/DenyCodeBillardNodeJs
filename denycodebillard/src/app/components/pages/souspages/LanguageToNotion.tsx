@@ -17,7 +17,7 @@ interface AccueilProps {
 
 export const LanguageToNotion = ({ nLanguage, nameLanguageToNotion, varLanguageToNotion, setVarLanguageToNotion, setNameLanguageToNotionToExercice}: AccueilProps) => {
 
-    const divElements = [];
+    var divElements = [];
     
     const [notions, setNotions] = useState<NotionType[]>([]);
 
@@ -37,17 +37,17 @@ export const LanguageToNotion = ({ nLanguage, nameLanguageToNotion, varLanguageT
     if(nLanguage > 0){
       for (let i = 0; i < notions.length; i++) {
           divElements.push(
-            <div onClick={() => {setVarLanguageToNotion(i + 1), setNameLanguageToNotionToExercice(notions[i].name)}} id={notions[i].name} className="notion box" data-language={varLanguageToNotion} key={i}>
+            <div key={notions[i]._id} onClick={() => {setVarLanguageToNotion(i + 1), setNameLanguageToNotionToExercice(notions[i].name)}} id={notions[i].name} className="notion box" data-language={varLanguageToNotion}>
               <span>{notions[i].name}</span>
             </div>
           );
       }
     }else{
-      const divElements = [];
+      divElements = [];
     }
 
     return (
-        <div className="notions-container">
+        <div key="notions-container" className="notions-container">
             {divElements}
         </div>
     );

@@ -25,7 +25,8 @@ export const getExercice = async (id: number) => {
         await connect(db);
 
         const rows = await new Promise<any[]>((resolve, reject) => {
-            db.query("SELECT * FROM exercices WHERE id = ?", [id], (err, rows: any[], field) => {
+            const sql = "SELECT exercices.id as id, languages.name as language, notions.name as notion, exercices.name as name, nb_visit, nb_visit_month, nb_xp, enonce FROM exercices JOIN notions ON exercices.notion = notions.id JOIN languages ON exercices.language = languages.id WHERE exercices.id = ?"
+            db.query(sql, [id], (err, rows: any[], field) => {
                 if (err) {
                     reject(err);
                 } else {

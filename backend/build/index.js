@@ -15,6 +15,7 @@ import { languagesRouter } from "./routes/languages.route.js";
 import { notionsRouter } from "./routes/notions.route.js";
 import { usersRouter } from "./routes/users.route.js";
 import { languageStatsRouter } from "./routes/stats.route.js";
+import { exercicesRouter } from "./routes/exercices.route.js";
 dotenv.config();
 //EQr4B7b8fLTddXZC
 // connexion();
@@ -52,6 +53,7 @@ app.use("/", languagesRouter);
 app.use("/", notionsRouter);
 app.use("/", usersRouter);
 app.use("/", languageStatsRouter);
+app.use("/", exercicesRouter);
 app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.send("Hello World!");
     // const languages = await getLanguages();

@@ -1,7 +1,7 @@
 export type Exercice = {
     id: number;
-    language: number;
-    notion: number;
+    language: string;
+    notion: string;
     name: string;
     nb_visit: number;
     nb_visit_mounth: number;

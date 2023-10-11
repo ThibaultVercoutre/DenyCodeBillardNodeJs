@@ -12,6 +12,11 @@
   }
 }
 
+@font-face {
+  font-family: 'Lexend';
+  src: url('./font/Lexend-VariableFont_wght.ttf') format('truetype');
+}
+
 body {
   margin: 0;
   color: rgb(var(--foreground-rgb));
@@ -21,6 +26,8 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    font-family: "Lexend", sans-serif !important;
+    font-weight: 300 !important;
 }
 
 .Accueil{
@@ -83,7 +90,6 @@ nav ul button{
 .nav-link {
   display: inline-block;
   font-size: 1.2rem;
-  /* font-family: 'Arial', sans-serif; */
   color: rgb(244,237,222);
   border: 2px solid rgb(244,237,222);
   box-shadow: 5px 5px 10px rgba(103, 102, 102, 0.5);
@@ -103,7 +109,6 @@ nav ul button{
   backdrop-filter: blur(10px);
   display: inline-block;
   font-size: 1.2rem;
-  /* font-family: 'Arial', sans-serif; */
   color: rgb(244,237,222);
   border: 2px solid rgb(244,237,222);
   box-shadow: 5px 5px 10px rgba(103, 102, 102, 0.5);
@@ -117,7 +122,6 @@ nav ul button{
 #button{
   backdrop-filter: blur(10px);
   font-size: 1rem;
-  /* font-family: 'Arial', sans-serif; */
   color: rgb(244,237,222);
   border: 2px solid rgb(244,237,222);
   box-shadow: 5px 5px 10px rgba(103, 102, 102, 0.5);
@@ -151,7 +155,6 @@ form input, div.log input{
 .login{
   backdrop-filter: blur(10px);
   font-size: 1.2rem;
-  /* font-family: 'Arial', sans-serif; */
   color: rgb(244,237,222);
   border: 2px solid rgb(244,237,222);
   box-shadow: 5px 5px 10px rgba(103, 102, 102, 0.5);
@@ -249,4 +252,10 @@ form input, div.log input{
   100% {
       background-position: 0% 50%;
   }
+}
+
+#CorpPage{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(103, 102, 102, 0.5);
 }

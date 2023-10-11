@@ -38,12 +38,13 @@ export const Notions = ({ exercice, setExercice }: NotionProps) => {
 
     if(varNotion == 0) {
         for(let i = 0; i < notions.length; i++) {
+            var key = "not" + i;
             divElementsNotions2.push(
-                <div onClick={() => {setVarNotion(i+1), setVarNotionToLanguage(0), setNameNotionToLanguage(notions[i].name)}} id={notions[i].name} className="language box" data-language={notions[i].name}><span>{notions[i].name}</span></div>
+                <div key={notions[i]._id} onClick={() => {setVarNotion(i+1), setVarNotionToLanguage(0), setNameNotionToLanguage(notions[i].name)}} id={notions[i].name} className="language box" data-language={notions[i].name}><span>{notions[i].name}</span></div>
             )
         }
         divElementsNotions.push(
-            <div className="languages-container">
+            <div key="languages-container" className="languages-container">
                 {divElementsNotions2}
             </div>
         );
@@ -51,7 +52,7 @@ export const Notions = ({ exercice, setExercice }: NotionProps) => {
 
     if(varNotionToLanguage == 0){
         divElementsNotionsLanguages.push(
-            <NotionToLanguage exercice={exercice} setExercice={setExercice} nameNotionToLanguage = {nameNotionToLanguage} nameNotionToLanguageToExercice = {nameNotionToLanguageToExercice} setNameNotionToLanguageToExercice = {setNameNotionToLanguageToExercice} varNotion = {varNotion} varNotionToLanguage = {varNotionToLanguage} setVarNotionToLanguage = {setVarNotionToLanguage}/>
+            <NotionToLanguage key="languages-container" exercice={exercice} setExercice={setExercice} nameNotionToLanguage = {nameNotionToLanguage} nameNotionToLanguageToExercice = {nameNotionToLanguageToExercice} setNameNotionToLanguageToExercice = {setNameNotionToLanguageToExercice} varNotion = {varNotion} varNotionToLanguage = {varNotionToLanguage} setVarNotionToLanguage = {setVarNotionToLanguage}/>
         )
     }
 

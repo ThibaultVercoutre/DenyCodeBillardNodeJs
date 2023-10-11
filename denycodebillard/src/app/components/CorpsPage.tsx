@@ -34,7 +34,8 @@ export const CorpsPage = ({ npage }: AccueilProps) => {
 
     const [page, setPage] = useState(components[npage]);
     
-    const [pageExo, setPageExo] = useState(<></>);
+    //const [pageExo, setPageExo] = useState(<></>);
+    const pageExo = <Exercice infoExercice={infoExercice} />;
 
     useEffect(() => {
         setPage(components[npage]);
@@ -44,14 +45,14 @@ export const CorpsPage = ({ npage }: AccueilProps) => {
         console.log(exercice);
         (async () => {
             const exercices = await fetchExercices();
-            setInfoExercice(exercices);
-            if(infoExercice != undefined){
-                console.log("Here")
-                setPageExo(<Exercice infoExercice={infoExercice} />);
-            }else{
-                console.log("not here")
-                setPageExo(<></>);
-            }
+            setInfoExercice(exercices[0]);
+            // if(infoExercice != undefined){
+            //     console.log("Here")
+            //     pageExo.push(<Exercice infoExercice={infoExercice} />);
+            // }else{
+            //     console.log("not here")
+            //     pageExo = <></>;
+            // }
         })();
     }, [exercice]);
 
@@ -59,8 +60,8 @@ export const CorpsPage = ({ npage }: AccueilProps) => {
         return (await axios.get(`http://localhost:5000/exercice/${exercice}`)).data;
     };
 
-    return <>
+    return <div id="CorpPage">
             {page}
             {pageExo}
-        </>;
+        </div>;
 };

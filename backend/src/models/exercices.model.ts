@@ -7,11 +7,11 @@ const ExerciceSchema: Schema = new Schema(
         required: true,
     },
     language: {
-      type: Number,
+      type: String,
       required: true,
     },
     notion: {
-        type: Number,
+        type: String,
         required: true,
     },
     name: {
@@ -39,8 +39,8 @@ const ExerciceSchema: Schema = new Schema(
 export interface IIExercice {
     _id: Types.ObjectId;
     id: number;
-    language: number;
-    notion: number;
+    language: string;
+    notion: string;
     name: string;
     nb_visit: number;
     nb_visit_month: number;

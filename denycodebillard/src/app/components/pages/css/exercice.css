@@ -1,0 +1,27 @@
+.exercice-title{
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+.exercice-info{
+    font-size: 1.2em;
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+.exercice-enonce{
+    margin: 25px;
+}
+
+#code{
+    margin: 0px 5px 5px 5px;
+}
+
+.title_language {
+    background-color: #2F3129;
+    margin: 5px 5px 0px 5px;
+    width: 80px;
+    padding: 0.5rem 1rem;
+}
